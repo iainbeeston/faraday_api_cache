@@ -24,6 +24,10 @@ module FaradayAPICache
       self.store = APICache::MemoryStore.new
     end
 
+    def self.logger=(logger)
+      APICache.logger = logger
+    end
+
     def self.store=(store)
       APICache.store = store
     end
