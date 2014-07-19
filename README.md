@@ -24,9 +24,12 @@ FaradayAPICache.logger = Rails.logger
 FaradayAPICache.store = Moneta.new(:Memcached)
 ~~~
 
-## Why use Faraday API Cache
+## Why use Faraday API Cache?
 
-There are already good middleware for caching in Faraday. For example, [faraday-http-cache](https://github.com/plataformatec/faraday-http-cache) and the caching middleware in [faraday_middleware](https://github.com/lostisland/faraday_middleware). The former takes cache settings from the response headers, but it's not suitable if you don't trust the server or want shorter or longer cache times than the headers recommend. The latter really is equivelent to Faraday API Cache, but this gem might make more sense if you're already using API Cache or are more familiar with API Cache.
+There are already good middleware for caching in Faraday:
+
+* [faraday-http-cache](https://github.com/plataformatec/faraday-http-cache) takes cache settings from the expiry and modified response headers, whereas Faraday API Cache lets the developer set the cache expiry.
+* The caching middleware in [faraday_middleware](https://github.com/lostisland/faraday_middleware) is equivelent to Faraday API Cache, but if you're already using API Cache then it might make more sense to use Faraday API Cache.
 
 ## Credits
 
