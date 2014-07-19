@@ -5,7 +5,7 @@ module FaradayAPICache
   class Middleware < Faraday::Middleware
     def initialize(app, options = {})
       super(app)
-      @options = options.to_hash
+      @options = { period: 0, timeout: 0 }.merge(options.to_hash)
     end
 
     def call(env)
