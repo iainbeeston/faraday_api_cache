@@ -27,3 +27,7 @@ FaradayAPICache.store = Moneta.new(:Memcached)
 ## Why use Faraday API Cache
 
 There are already good middleware for caching in Faraday. For example, [faraday-http-cache](https://github.com/plataformatec/faraday-http-cache) and the caching middleware in [faraday_middleware](https://github.com/lostisland/faraday_middleware). The former takes cache settings from the response headers, but it's not suitable if you don't trust the server or want shorter or longer cache times than the headers recommend. The latter really is equivelent to Faraday API Cache, but this gem might make more sense if you're already using API Cache or are more familiar with API Cache.
+
+## Credits
+
+Faraday API Cache was originally written by [Ismael Celis](https://github.com/ismasan), but was open sourced and is now maintained by [Iain Beeston](https://github.com/iainbeeston).
