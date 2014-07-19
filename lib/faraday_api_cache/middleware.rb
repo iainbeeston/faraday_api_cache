@@ -11,11 +11,9 @@ module FaradayAPICache
     def call(env)
       if env[:method] == :get
         APICache.get(env[:url].to_s, @options) do
-          APICache.logger.debug 'FaradayAPICache cache miss... Caching.'
           @app.call(env)
         end
       else
-        APICache.logger.debug 'FaradayAPICache cache hit.'
         @app.call(env)
       end
     end
