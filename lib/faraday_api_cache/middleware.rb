@@ -18,10 +18,6 @@ module FaradayAPICache
       end
     end
 
-    def self.clear
-      self.store = APICache::MemoryStore.new
-    end
-
     def self.logger=(logger)
       APICache.logger = logger
     end
